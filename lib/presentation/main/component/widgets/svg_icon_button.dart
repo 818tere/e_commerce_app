@@ -2,8 +2,12 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SvgIconButton extends StatelessWidget {
-  const SvgIconButton(
-      {required this.icon, required this.color, this.padding = 4.0, super.key});
+  const SvgIconButton({
+    required this.icon,
+    required this.color,
+    this.padding = 4.0,
+    super.key,
+  });
 
   final double padding;
   final String icon;
