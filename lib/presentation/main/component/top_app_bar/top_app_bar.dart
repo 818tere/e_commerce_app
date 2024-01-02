@@ -12,6 +12,7 @@ class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BottomNavCubit, BottomNav>(
+      //BottomNavCubit을 BlocBuilder로 감싸고, builder를 통해 state를 받아온다.
       builder: (_, state) {
         switch (state) {
           case BottomNav.home:

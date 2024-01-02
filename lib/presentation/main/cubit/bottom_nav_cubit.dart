@@ -2,15 +2,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/theme/constant/app_icons.dart';
 
-enum BottomNav { home, category, search, user }
+enum BottomNav { home, category, search, user } // BottomNav은 열거형
 
 class BottomNavCubit extends Cubit<BottomNav> {
+  // BottomNavCubit은 BottomNav을 상속
   BottomNavCubit() : super(BottomNav.home);
 
   void changeIndex(int index) => emit(BottomNav.values[index]);
 }
 
 extension BottomNavX on BottomNav {
+  // BottomNavX는 BottomNav의 확장
   String get icon {
     switch (this) {
       case BottomNav.home:

@@ -8,14 +8,18 @@ import '../pages/search/search_screen.dart';
 import '../pages/user/user_screen.dart';
 import 'component/top_app_bar/top_app_bar.dart';
 import 'cubit/bottom_nav_cubit.dart';
+import 'mall_type_cubit.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => BottomNavCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => BottomNavCubit()),
+        BlocProvider(create: (_) => MallTypeCubit()),
+      ],
       child: MainScreenView(),
     );
   }
@@ -29,6 +33,7 @@ class MainScreenView extends StatelessWidget {
     return Scaffold(
       appBar: TopAppBar(),
       body: BlocBuilder<BottomNavCubit, BottomNav>(
+        //BottomNavCubit을 BlocBuilder로 감싸고, builder를 통해 state를 받아온다.
         builder: (_, state) {
           switch (state) {
             case BottomNav.home:
