@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/theme/constant/app_icons.dart';
 import '../../routes/route_path.dart';
 
-// Todo 로그인 bloc
+// TODO 로그인 bloc
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
 
@@ -18,15 +19,14 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 2), () => context.go(RoutePath.home));
+    Timer(Duration(seconds: 2), () => context.go(RoutePath.main));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // TODO 하드코딩 된 값 변경할 것
-      backgroundColor: Color(0xff5f0080),
-      body: Center(child: SvgPicture.asset('assets/svg/main_logo.svg')),
+      body: Center(child: SvgPicture.asset(AppIcons.mainLogo)),
+      backgroundColor: Theme.of(context).colorScheme.primary,
     );
   }
 }
