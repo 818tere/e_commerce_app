@@ -5,7 +5,7 @@ part 'response_wrapper.freezed.dart';
 part 'response_wrapper.g.dart';
 
 @Freezed(genericArgumentFactories: true)
-class ResponseWrapper<T> with _$ResponseWrapper {
+class ResponseWrapper<T> with _$ResponseWrapper<T> {
   // 제네릭 T를 이용하는 경우 일반적인 freezed 템플릿과 다르게 작성
   // 공식문서 확인
   factory ResponseWrapper({
