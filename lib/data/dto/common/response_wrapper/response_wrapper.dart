@@ -16,6 +16,8 @@ class ResponseWrapper<T> with _$ResponseWrapper<T> {
   }) = _ResponseWrapper;
 
   factory ResponseWrapper.fromJson(
-          Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
+    Map<String, dynamic> json,
+    T Function(Object?) fromJsonT,
+  ) =>
       _$ResponseWrapperFromJson(json, fromJsonT);
 }

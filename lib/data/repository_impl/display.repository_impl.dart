@@ -1,5 +1,3 @@
-import 'package:dio/dio.dart';
-
 import '../../domain/model/display/menu/menu.model.dart';
 import '../../domain/repository/display.repository.dart';
 import '../../presentation/main/mall_type_cubit.dart';
@@ -16,8 +14,9 @@ class DisplayRepositoryImpl implements DisplayRepository {
   DisplayRepositoryImpl(this._displayApi);
 
   @override
-  Future<ResponseWrapper<List<Menu>>> getMenusByMallType(
-      {required MallType mallType}) async {
+  Future<ResponseWrapper<List<Menu>>> getMenusByMallType({
+    required MallType mallType,
+  }) async {
     final response = await _displayApi.getMenusByMallType(mallType.name);
 
     return response.toModel<List<Menu>>(

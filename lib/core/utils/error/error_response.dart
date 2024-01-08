@@ -3,7 +3,10 @@ class ErrorResponse {
   final String? message;
   final String? code;
 
-  ErrorResponse(
-      {this.status = 'SUCCESS', this.message = '', this.code = '200'});
+  ErrorResponse({
+    this.status = 'SUCCESS',
+    this.message = '',
+    this.code = '200',
+  });
 }
 // usecase의 error response
